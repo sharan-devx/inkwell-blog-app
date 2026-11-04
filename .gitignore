@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# logs
+npm-debug.log*
+*.log
+
+# environment and editor files
+.env
+.env.*
+.vscode/
+.DS_Store
+
+# images uploaded while using the app (keep the empty folders)
+public/uploads/**/*
+!public/uploads/**/.gitkeep

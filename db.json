@@ -1,0 +1,717 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Site Admin",
+      "email": "admin@blog.com",
+      "password": "admin123",
+      "role": "admin",
+      "status": "active",
+      "bio": ""
+    },
+    {
+      "id": 2,
+      "name": "Asha Rao",
+      "email": "asha@blog.com",
+      "password": "asha123",
+      "role": "author",
+      "status": "active",
+      "bio": "Software engineer who writes about web development and learning to code."
+    },
+    {
+      "id": 3,
+      "name": "Ravi Kumar",
+      "email": "ravi@blog.com",
+      "password": "ravi123",
+      "role": "author",
+      "status": "blocked",
+      "bio": "Food and travel storyteller based in Hyderabad."
+    },
+    {
+      "id": 4,
+      "name": "Meera Iyer",
+      "email": "meera@blog.com",
+      "password": "meera123",
+      "role": "author",
+      "status": "active",
+      "bio": "Physiotherapist sharing simple habits for health and balance."
+    },
+    {
+      "id": 5,
+      "name": "Kiran Reddy",
+      "email": "kiran@blog.com",
+      "password": "kiran123",
+      "role": "author",
+      "status": "active",
+      "bio": "Cloud engineer and part-time teacher."
+    },
+    {
+      "id": 6,
+      "name": "Sana Khan",
+      "email": "sana@blog.com",
+      "password": "sana123",
+      "role": "author",
+      "status": "active",
+      "bio": "Home cook and slow-travel enthusiast."
+    },
+    {
+      "id": 7,
+      "name": "Priya Nair",
+      "email": "priya@blog.com",
+      "password": "priya123",
+      "role": "author",
+      "status": "active",
+      "bio": "Nutrition coach writing about everyday wellbeing.",
+      "avatar": "/uploads/profiles/1793781935229-eueoej.png"
+    },
+    {
+      "id": 8,
+      "name": "Dev Malhotra",
+      "email": "dev@blog.com",
+      "password": "dev123",
+      "role": "author",
+      "status": "active",
+      "bio": "Backend developer. (Blocked account, for testing admin controls.)",
+      "avatar": "/uploads/profiles/1793782365661-n95cnb.png"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Getting Started with React Hooks",
+      "category": "Technology",
+      "imageUrl": "",
+      "content": "Hooks let you use state and lifecycle features inside function components, which removes most of the need for classes.\n\nStart with useState for local state and useEffect for side effects such as fetching data. Keep each effect small, and always list its dependencies so it runs exactly when you expect.",
+      "authorId": 2,
+      "createdAt": "2025-01-10T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Why Small Teams Ship Faster",
+      "category": "Technology",
+      "imageUrl": "",
+      "content": "Fewer people means fewer handoffs. Decisions happen in one conversation, and everyone knows the whole codebase.\n\nThe trade-off is a low bus factor, so write down the things that only one person knows: deployment steps, vendor logins, and the reasons behind big decisions.",
+      "authorId": 2,
+      "createdAt": "2025-01-24T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "REST vs GraphQL: Picking the Right API Style",
+      "category": "Technology",
+      "imageUrl": "",
+      "content": "REST is simple, cacheable and understood by every tool. GraphQL lets clients ask for exactly the fields they need, which helps when screens combine data from many places.\n\nFor a small project with a few resources, start with REST. Reach for GraphQL when mobile and web clients keep needing different shapes of the same data.",
+      "authorId": 2,
+      "createdAt": "2025-02-08T09:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "How I Learned to Code in Six Months",
+      "category": "Education",
+      "imageUrl": "/uploads/blogs/1793780608283-c5afo4.png",
+      "content": "I started with one language and one small project, and I refused to switch until the project worked. That single rule saved me from months of tutorial hopping.\n\nI wrote code every day, even for twenty minutes. Consistency mattered far more than long weekend marathons.",
+      "authorId": 2,
+      "createdAt": "2025-02-20T09:00:00.000Z",
+      "updatedAt": "2026-11-04T08:23:35.912Z"
+    },
+    {
+      "id": 5,
+      "title": "A Weekend in Hampi",
+      "category": "Travel",
+      "imageUrl": "",
+      "content": "Hampi's boulder landscape is best explored at sunrise. Rent a bicycle, carry plenty of water, and begin with the Virupaksha temple before the crowds arrive.\n\nSave the evening for Matanga Hill. The view of the ruins turning gold is worth the early scramble.",
+      "authorId": 3,
+      "createdAt": "2025-02-14T09:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "Hyderabadi Biryani at Home",
+      "category": "Food",
+      "imageUrl": "",
+      "content": "The secret is patience: marinate the meat overnight, par-boil the rice to about 70 percent, and seal the pot with dough so the steam stays inside.\n\nLayer the rice over the meat with fried onions, saffron milk and mint, then cook on the lowest flame for 25 minutes.",
+      "authorId": 3,
+      "createdAt": "2025-03-01T09:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Street Food Trail in Old Delhi",
+      "category": "Food",
+      "imageUrl": "",
+      "content": "Begin at Paranthe Wali Gali for stuffed parathas, then walk toward Chandni Chowk for chaat and jalebi. Go hungry and go with friends so you can share plates.\n\nTake cash, wear comfortable shoes, and expect to stand while you eat. That is part of the charm.",
+      "authorId": 3,
+      "createdAt": "2025-03-18T09:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "title": "Backpacking the Western Ghats on a Budget",
+      "category": "Travel",
+      "imageUrl": "",
+      "content": "Hostels, state buses and homestays can keep a week in the Western Ghats under a modest budget. Travel in the post-monsoon weeks when waterfalls are full and the hills are green.\n\nPack a light rain jacket, a power bank and a small first-aid kit. Phone signal disappears on many trails.",
+      "authorId": 3,
+      "createdAt": "2025-04-05T09:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "title": "Five-Minute Stretches for Desk Workers",
+      "category": "Health",
+      "imageUrl": "",
+      "content": "Set a timer to stand up every hour. Roll your shoulders, stretch your neck gently side to side, and open your chest by clasping your hands behind your back.\n\nFinish with a standing hip-flexor stretch. These small breaks reduce stiffness more than one long session after work.",
+      "authorId": 4,
+      "createdAt": "2025-04-12T09:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "title": "Sleep Habits That Actually Work",
+      "category": "Health",
+      "imageUrl": "",
+      "content": "Keep a fixed wake-up time, even on weekends. Dim the lights an hour before bed and keep screens out of the bedroom if you can.\n\nIf you cannot sleep after twenty minutes, get up and do something quiet until you feel drowsy. Lying awake teaches your brain the wrong association.",
+      "authorId": 4,
+      "createdAt": "2025-04-28T09:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "title": "A Gentle Guide to Minimalism",
+      "category": "Lifestyle",
+      "imageUrl": "",
+      "content": "Minimalism is not about owning ten things. It is about keeping what you use and love, and letting go of the rest without guilt.\n\nStart with one drawer. Sort it into keep, donate and discard, and notice how good a small win feels.",
+      "authorId": 4,
+      "createdAt": "2025-05-10T09:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "title": "Building a Morning Routine You Will Keep",
+      "category": "Lifestyle",
+      "imageUrl": "",
+      "content": "Pick two or three anchors such as water, a short walk and five minutes of planning. Resist the urge to copy someone else's two-hour routine.\n\nStack the new habit on something you already do, like making tea. Small and repeatable beats ambitious and abandoned.",
+      "authorId": 4,
+      "createdAt": "2025-05-22T09:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "title": "Git Habits Every Developer Should Build",
+      "category": "Technology",
+      "imageUrl": "",
+      "content": "Commit small and often, and write messages that explain why a change was made, not only what changed. Future you will be grateful.\n\nUse short-lived branches, rebase before opening a pull request, and never force-push to a shared branch.",
+      "authorId": 5,
+      "createdAt": "2025-06-03T09:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "title": "A Beginner's Look at Cloud Costs",
+      "category": "Technology",
+      "imageUrl": "",
+      "content": "Cloud bills grow quietly. Turn on billing alerts on day one, tag every resource with a project name, and delete test environments when you are done.\n\nStorage and data transfer often cost more than compute for small apps, so check those lines first.",
+      "authorId": 5,
+      "createdAt": "2025-06-15T09:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "title": "Study Techniques Backed by Research",
+      "category": "Education",
+      "imageUrl": "",
+      "content": "Spaced repetition and active recall beat rereading by a wide margin. Test yourself instead of highlighting, and revisit material after a day, a week and a month.\n\nExplaining a topic aloud to an imaginary student is a surprisingly good way to find the gaps in your understanding.",
+      "authorId": 5,
+      "createdAt": "2025-06-27T09:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "title": "Why Teachers Should Try Project-Based Learning",
+      "category": "Education",
+      "imageUrl": "",
+      "content": "When students build something real, they remember the concepts because they needed them. A class that designs a rainwater harvesting model learns geometry and science together.\n\nStart with one short project per term and let students choose the topic within clear guidelines.",
+      "authorId": 5,
+      "createdAt": "2025-07-08T09:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "title": "Monsoon Comfort: Five Soups Worth Making",
+      "category": "Food",
+      "imageUrl": "",
+      "content": "Rainy evenings call for soup. Tomato shorba, mulligatawny, sweet corn, lemon coriander and a simple dal soup cover every mood.\n\nMake a big batch, freeze half, and finish each bowl with fresh herbs and a squeeze of lemon.",
+      "authorId": 6,
+      "createdAt": "2025-07-20T09:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "title": "The Art of South Indian Filter Coffee",
+      "category": "Food",
+      "imageUrl": "",
+      "content": "Use freshly ground coffee with a touch of chicory, and let the decoction drip slowly for at least twenty minutes. Rushing it gives a weak cup.\n\nMix hot milk and decoction in the ratio you like, then pour between a tumbler and davara to cool and froth it.",
+      "authorId": 6,
+      "createdAt": "2025-08-02T09:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "title": "Slow Travel in Kerala Backwaters",
+      "category": "Travel",
+      "imageUrl": "",
+      "content": "Skip the packed itinerary. Spend three nights in one village, take a canoe at dawn, and eat where the locals eat.\n\nBook a small homestay rather than a large houseboat for a quieter, more personal experience.",
+      "authorId": 6,
+      "createdAt": "2025-08-14T09:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "title": "Weekend Reset: Plan Less, Rest More",
+      "category": "Lifestyle",
+      "imageUrl": "",
+      "content": "Choose one thing you look forward to each weekend and leave the rest open. An empty afternoon is not wasted time.\n\nPrepare Sunday night with a short tidy-up and a list of three priorities for Monday, then switch off.",
+      "authorId": 6,
+      "createdAt": "2025-08-30T09:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "title": "Walking: The Underrated Exercise",
+      "category": "Health",
+      "imageUrl": "",
+      "content": "A brisk thirty-minute walk improves mood, heart health and sleep without needing equipment. Aim for most days, and walk after meals when you can.\n\nTrack steps if it motivates you, but do not obsess over a number. Time on your feet is what counts.",
+      "authorId": 7,
+      "createdAt": "2025-09-10T09:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "title": "Eating Well on a Busy Schedule",
+      "category": "Health",
+      "imageUrl": "/uploads/blogs/1793781535828-avhgfn.png",
+      "content": "Plan two or three base meals for the week and prepare components in advance: cooked lentils, chopped vegetables and a pot of rice or millets.\n\nKeep fruit, nuts and curd within reach so the easy choice is also the healthy one.",
+      "authorId": 7,
+      "createdAt": "2025-09-22T09:00:00.000Z",
+      "updatedAt": "2026-11-04T08:39:09.838Z"
+    },
+    {
+      "id": 23,
+      "title": "Digital Declutter in One Evening",
+      "category": "Lifestyle",
+      "imageUrl": "",
+      "content": "Unsubscribe from newsletters you never open, mute noisy groups, and delete apps you have not used in three months.\n\nTurn off non-essential notifications. Your attention is limited, so decide who gets to interrupt it.",
+      "authorId": 7,
+      "createdAt": "2025-10-04T09:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "title": "Understanding Docker in Plain Words",
+      "category": "Technology",
+      "imageUrl": "/uploads/blogs/1793781458494-wn03gt.jpg",
+      "content": "A container packages your app with everything it needs, so it runs the same on your laptop and on a server. An image is the recipe, and a container is a running copy.\n\nStart by writing a small Dockerfile for a project you already know. Learning by doing makes the vocabulary click.",
+      "authorId": 8,
+      "createdAt": "2025-10-15T09:00:00.000Z",
+      "updatedAt": "2026-11-04T08:38:06.257Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "blogId": 1,
+      "name": "Meera",
+      "rating": 5,
+      "text": "Clear and to the point. The dependency tip alone saved me an hour.",
+      "createdAt": "2025-01-12T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "blogId": 1,
+      "name": "Naveen",
+      "rating": 4,
+      "text": "Good intro. Would love a follow-up on useReducer.",
+      "createdAt": "2025-01-13T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "blogId": 1,
+      "name": "Divya",
+      "rating": 5,
+      "text": "Finally an explanation that does not assume I know classes.",
+      "createdAt": "2025-01-14T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "blogId": 2,
+      "name": "Karthik",
+      "rating": 5,
+      "text": "Our team of four ships weekly, and this matches our experience.",
+      "createdAt": "2025-01-25T10:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "blogId": 2,
+      "name": "Lakshmi",
+      "rating": 4,
+      "text": "The bus factor point is underrated.",
+      "createdAt": "2025-01-26T10:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "blogId": 3,
+      "name": "Rohit",
+      "rating": 4,
+      "text": "Balanced comparison. I use REST for most things.",
+      "createdAt": "2025-02-11T10:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "blogId": 3,
+      "name": "Anita",
+      "rating": 3,
+      "text": "Useful, though I wanted a code example for each.",
+      "createdAt": "2025-02-12T10:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "blogId": 3,
+      "name": "Farhan",
+      "rating": 5,
+      "text": "Shared this with my team before our API review.",
+      "createdAt": "2025-02-09T10:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "blogId": 4,
+      "name": "Vikram",
+      "rating": 5,
+      "text": "One project at a time is great advice.",
+      "createdAt": "2025-02-22T10:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "blogId": 4,
+      "name": "Pooja",
+      "rating": 5,
+      "text": "Twenty minutes a day got me through my first course.",
+      "createdAt": "2025-02-23T10:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "blogId": 4,
+      "name": "Sameer",
+      "rating": 4,
+      "text": "Inspiring. What project did you pick first?",
+      "createdAt": "2025-02-24T10:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "blogId": 5,
+      "name": "Kiran",
+      "rating": 4,
+      "text": "Adding this to my travel list.",
+      "createdAt": "2025-02-15T10:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "blogId": 5,
+      "name": "Neha",
+      "rating": 5,
+      "text": "Went last year and sunrise at Matanga Hill was unforgettable.",
+      "createdAt": "2025-02-16T10:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "blogId": 5,
+      "name": "Arvind",
+      "rating": 4,
+      "text": "Bicycles are the best way to see it.",
+      "createdAt": "2025-02-17T10:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "blogId": 6,
+      "name": "Fatima",
+      "rating": 5,
+      "text": "Tried this on Sunday and my family asked for seconds.",
+      "createdAt": "2025-03-05T10:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "blogId": 6,
+      "name": "Gopal",
+      "rating": 5,
+      "text": "The dough seal makes all the difference.",
+      "createdAt": "2025-03-02T10:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "blogId": 6,
+      "name": "Ritu",
+      "rating": 4,
+      "text": "A bit time-consuming, but worth it.",
+      "createdAt": "2025-03-03T10:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "blogId": 7,
+      "name": "Manish",
+      "rating": 5,
+      "text": "Paranthe Wali Gali is a must. Great guide.",
+      "createdAt": "2025-03-21T10:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "blogId": 7,
+      "name": "Swathi",
+      "rating": 4,
+      "text": "Now I am hungry again.",
+      "createdAt": "2025-03-22T10:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "blogId": 8,
+      "name": "Tarun",
+      "rating": 4,
+      "text": "Helpful budget tips. Carrying a power bank is key.",
+      "createdAt": "2025-04-06T10:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "blogId": 8,
+      "name": "Isha",
+      "rating": 5,
+      "text": "Booked my homestay after reading this.",
+      "createdAt": "2025-04-07T10:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "blogId": 9,
+      "name": "Harini",
+      "rating": 5,
+      "text": "I set an hourly timer and my back feels much better.",
+      "createdAt": "2025-04-15T10:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "blogId": 9,
+      "name": "Dinesh",
+      "rating": 4,
+      "text": "Simple and doable at my desk.",
+      "createdAt": "2025-04-16T10:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "blogId": 9,
+      "name": "Shreya",
+      "rating": 5,
+      "text": "The hip-flexor stretch is a lifesaver.",
+      "createdAt": "2025-04-13T10:00:00.000Z"
+    },
+    {
+      "id": 25,
+      "blogId": 10,
+      "name": "Jayesh",
+      "rating": 4,
+      "text": "The twenty-minute rule really helped.",
+      "createdAt": "2025-04-30T10:00:00.000Z"
+    },
+    {
+      "id": 26,
+      "blogId": 10,
+      "name": "Bhavna",
+      "rating": 5,
+      "text": "Fixed wake-up time changed everything for me.",
+      "createdAt": "2025-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 27,
+      "blogId": 11,
+      "name": "Rekha",
+      "rating": 5,
+      "text": "Started with one drawer, now the whole room.",
+      "createdAt": "2025-05-14T10:00:00.000Z"
+    },
+    {
+      "id": 28,
+      "blogId": 11,
+      "name": "Ajay",
+      "rating": 3,
+      "text": "Nice idea, though I find it hard to let go of books.",
+      "createdAt": "2025-05-11T10:00:00.000Z"
+    },
+    {
+      "id": 29,
+      "blogId": 12,
+      "name": "Sunita",
+      "rating": 4,
+      "text": "Stacking habits on tea is clever.",
+      "createdAt": "2025-05-24T10:00:00.000Z"
+    },
+    {
+      "id": 30,
+      "blogId": 12,
+      "name": "Omar",
+      "rating": 5,
+      "text": "I stopped copying influencers and kept two anchors. It works.",
+      "createdAt": "2025-05-25T10:00:00.000Z"
+    },
+    {
+      "id": 31,
+      "blogId": 13,
+      "name": "Prakash",
+      "rating": 5,
+      "text": "Small commits saved me during a messy merge.",
+      "createdAt": "2025-06-07T10:00:00.000Z"
+    },
+    {
+      "id": 32,
+      "blogId": 13,
+      "name": "Zoya",
+      "rating": 4,
+      "text": "Rebase before a pull request is solid advice.",
+      "createdAt": "2025-06-04T10:00:00.000Z"
+    },
+    {
+      "id": 33,
+      "blogId": 14,
+      "name": "Deepak",
+      "rating": 5,
+      "text": "Billing alerts caught a forgotten test server for me.",
+      "createdAt": "2025-06-17T10:00:00.000Z"
+    },
+    {
+      "id": 34,
+      "blogId": 14,
+      "name": "Anjali",
+      "rating": 4,
+      "text": "Wish I had read this a year ago.",
+      "createdAt": "2025-06-18T10:00:00.000Z"
+    },
+    {
+      "id": 35,
+      "blogId": 15,
+      "name": "Mohan",
+      "rating": 5,
+      "text": "Active recall improved my exam scores noticeably.",
+      "createdAt": "2025-07-01T10:00:00.000Z"
+    },
+    {
+      "id": 36,
+      "blogId": 15,
+      "name": "Tanvi",
+      "rating": 4,
+      "text": "The explain-it-aloud trick is gold.",
+      "createdAt": "2025-06-28T10:00:00.000Z"
+    },
+    {
+      "id": 37,
+      "blogId": 16,
+      "name": "Ramesh",
+      "rating": 4,
+      "text": "Our school is piloting this next term.",
+      "createdAt": "2025-07-10T10:00:00.000Z"
+    },
+    {
+      "id": 38,
+      "blogId": 16,
+      "name": "Geeta",
+      "rating": 5,
+      "text": "Students were far more engaged with the rainwater project.",
+      "createdAt": "2025-07-11T10:00:00.000Z"
+    },
+    {
+      "id": 39,
+      "blogId": 17,
+      "name": "Sneha",
+      "rating": 5,
+      "text": "The lemon coriander soup is now a monsoon staple.",
+      "createdAt": "2025-07-24T10:00:00.000Z"
+    },
+    {
+      "id": 40,
+      "blogId": 17,
+      "name": "Imran",
+      "rating": 4,
+      "text": "Freezing half the batch is a smart tip.",
+      "createdAt": "2025-07-21T10:00:00.000Z"
+    },
+    {
+      "id": 41,
+      "blogId": 18,
+      "name": "Balaji",
+      "rating": 5,
+      "text": "Finally someone explains the froth properly.",
+      "createdAt": "2025-08-04T10:00:00.000Z"
+    },
+    {
+      "id": 42,
+      "blogId": 18,
+      "name": "Chitra",
+      "rating": 5,
+      "text": "Brought back memories of my grandmother's kitchen.",
+      "createdAt": "2025-08-05T10:00:00.000Z"
+    },
+    {
+      "id": 43,
+      "blogId": 19,
+      "name": "Alok",
+      "rating": 5,
+      "text": "Three nights in one village is the right way to travel.",
+      "createdAt": "2025-08-18T10:00:00.000Z"
+    },
+    {
+      "id": 44,
+      "blogId": 19,
+      "name": "Nisha",
+      "rating": 4,
+      "text": "Homestay recommendation was spot on.",
+      "createdAt": "2025-08-15T10:00:00.000Z"
+    },
+    {
+      "id": 45,
+      "blogId": 20,
+      "name": "Varun",
+      "rating": 4,
+      "text": "Plan less, rest more. Needed to hear that.",
+      "createdAt": "2025-09-01T10:00:00.000Z"
+    },
+    {
+      "id": 46,
+      "blogId": 21,
+      "name": "Padma",
+      "rating": 5,
+      "text": "Started walking after dinner and sleep improved.",
+      "createdAt": "2025-09-13T10:00:00.000Z"
+    },
+    {
+      "id": 47,
+      "blogId": 21,
+      "name": "Suresh",
+      "rating": 4,
+      "text": "Simple and effective.",
+      "createdAt": "2025-09-14T10:00:00.000Z"
+    },
+    {
+      "id": 48,
+      "blogId": 22,
+      "name": "Lata",
+      "rating": 5,
+      "text": "Meal prepping lentils saves my week.",
+      "createdAt": "2025-09-23T10:00:00.000Z"
+    },
+    {
+      "id": 49,
+      "blogId": 22,
+      "name": "Yash",
+      "rating": 3,
+      "text": "Good advice but tough with night shifts.",
+      "createdAt": "2025-09-24T10:00:00.000Z"
+    },
+    {
+      "id": 50,
+      "blogId": 23,
+      "name": "Mitali",
+      "rating": 5,
+      "text": "Did this in an evening and my phone feels lighter.",
+      "createdAt": "2025-10-07T10:00:00.000Z"
+    },
+    {
+      "id": 51,
+      "blogId": 24,
+      "name": "Rahul",
+      "rating": 4,
+      "text": "Image versus container finally makes sense.",
+      "createdAt": "2025-10-19T10:00:00.000Z"
+    },
+    {
+      "id": 52,
+      "blogId": 24,
+      "name": "Sowmya",
+      "rating": 3,
+      "text": "Helpful, but I would like a docker-compose section.",
+      "createdAt": "2025-10-16T10:00:00.000Z"
+    }
+  ]
+}
