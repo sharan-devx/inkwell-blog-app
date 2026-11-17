@@ -62,7 +62,7 @@
       "role": "author",
       "status": "active",
       "bio": "Nutrition coach writing about everyday wellbeing.",
-      "avatar": "/uploads/profiles/1793781935229-eueoej.png"
+      "avatar": "/images/profiles/1793781935229-eueoej.png"
     },
     {
       "id": 8,
@@ -72,7 +72,7 @@
       "role": "author",
       "status": "active",
       "bio": "Backend developer. (Blocked account, for testing admin controls.)",
-      "avatar": "/uploads/profiles/1793782365661-n95cnb.png"
+      "avatar": "/images/profiles/1793782365661-n95cnb.png"
     }
   ],
   "blogs": [
@@ -98,16 +98,17 @@
       "id": 3,
       "title": "REST vs GraphQL: Picking the Right API Style",
       "category": "Technology",
-      "imageUrl": "",
+      "imageUrl": "http://localhost:3001/images/blogs/1794908333038-4ndz38.png",
       "content": "REST is simple, cacheable and understood by every tool. GraphQL lets clients ask for exactly the fields they need, which helps when screens combine data from many places.\n\nFor a small project with a few resources, start with REST. Reach for GraphQL when mobile and web clients keep needing different shapes of the same data.",
       "authorId": 2,
-      "createdAt": "2025-02-08T09:00:00.000Z"
+      "createdAt": "2025-02-08T09:00:00.000Z",
+      "updatedAt": "2026-11-17T09:38:57.819Z"
     },
     {
       "id": 4,
       "title": "How I Learned to Code in Six Months",
       "category": "Education",
-      "imageUrl": "/uploads/blogs/1793780608283-c5afo4.png",
+      "imageUrl": "/images/blogs/1793780608283-c5afo4.png",
       "content": "I started with one language and one small project, and I refused to switch until the project worked. That single rule saved me from months of tutorial hopping.\n\nI wrote code every day, even for twenty minutes. Consistency mattered far more than long weekend marathons.",
       "authorId": 2,
       "createdAt": "2025-02-20T09:00:00.000Z",
@@ -270,7 +271,7 @@
       "id": 22,
       "title": "Eating Well on a Busy Schedule",
       "category": "Health",
-      "imageUrl": "/uploads/blogs/1793781535828-avhgfn.png",
+      "imageUrl": "/images/blogs/1793781535828-avhgfn.png",
       "content": "Plan two or three base meals for the week and prepare components in advance: cooked lentils, chopped vegetables and a pot of rice or millets.\n\nKeep fruit, nuts and curd within reach so the easy choice is also the healthy one.",
       "authorId": 7,
       "createdAt": "2025-09-22T09:00:00.000Z",
@@ -289,7 +290,7 @@
       "id": 24,
       "title": "Understanding Docker in Plain Words",
       "category": "Technology",
-      "imageUrl": "/uploads/blogs/1793781458494-wn03gt.jpg",
+      "imageUrl": "/images/blogs/1793781458494-wn03gt.jpg",
       "content": "A container packages your app with everything it needs, so it runs the same on your laptop and on a server. An image is the recipe, and a container is a running copy.\n\nStart by writing a small Dockerfile for a project you already know. Learning by doing makes the vocabulary click.",
       "authorId": 8,
       "createdAt": "2025-10-15T09:00:00.000Z",

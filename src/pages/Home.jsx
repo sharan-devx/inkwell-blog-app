@@ -13,12 +13,17 @@ export default function Home() {
   const q = params.get("q") || "";
 
   useEffect(() => {
-    Promise.all([api.get("/blogs?_sort=createdAt&_order=desc"), api.get("/users?role=author")])
+    Promise.all([
+      api.get("/blogs?_sort=createdAt&_order=desc"),
+      api.get("/users?role=author"),
+    ])
       .then(([b, a]) => {
         setBlogs(b);
         setAuthors(a.map(({ password, ...rest }) => rest));
       })
-      .catch(() => setError("Could not load blogs. Is JSON Server running on port 3001?"))
+      .catch(() =>
+        setError("Could not load blogs. Is JSON Server running on port 3001?"),
+      )
       .finally(() => setLoading(false));
   }, []);
 
@@ -33,7 +38,9 @@ export default function Home() {
             <div className="col-lg-7">
               <h1>Good writing from people who know their subject.</h1>
               <p className="mt-3 mb-0">
-                {blogs.length} stories by {authors.length} authors. Pick a category, follow an author, and join the conversation in the comments.
+                {blogs.length} stories by {authors.length} authors. Pick a
+                category, follow an author, and join the conversation in the
+                comments.
               </p>
             </div>
             <div className="col-lg-5">
@@ -45,7 +52,8 @@ export default function Home() {
                   <div className="feature-body">
                     <h2>{latest.title}</h2>
                     <div className="small text-body-secondary">
-                      {latestAuthor && <>By {latestAuthor}, </>}{fmtDate(latest.createdAt)}
+                      {latestAuthor && <>By {latestAuthor}, </>}
+                      {fmtDate(latest.createdAt)}
                     </div>
                   </div>
                 </Link>
@@ -55,14 +63,23 @@ export default function Home() {
         </div>
       </header>
       <main className="container py-5">
-        {loading && <div className="spinner-border text-success" role="status" />}
+        {loading && (
+          <div className="spinner-border text-success" role="status" />
+        )}
         {error && <div className="alert alert-danger">{error}</div>}
         {q && (
           <p className="text-body-secondary mb-3">
             Results for “{q}”. <Link to="/">Clear search</Link>
           </p>
         )}
-        {!loading && !error && <BlogBrowser blogs={blogs} authors={authors} showAuthorFilter query={q} />}
+        {!loading && !error && (
+          <BlogBrowser
+            blogs={blogs}
+            authors={authors}
+            showAuthorFilter
+            query={q}
+          />
+        )}
       </main>
     </>
   );

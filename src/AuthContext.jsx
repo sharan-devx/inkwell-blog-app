@@ -24,17 +24,26 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const found = await api.get(
-      `/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+      `/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
     );
     if (!found.length) throw new Error("Invalid email or password.");
-    if (found[0].status === "blocked") throw new Error("This account has been blocked by the admin.");
+    if (found[0].status === "blocked")
+      throw new Error("This account has been blocked by the admin.");
     return persist(found[0]);
   };
 
   const register = async ({ name, email, password, bio }) => {
     const existing = await api.get(`/users?email=${encodeURIComponent(email)}`);
-    if (existing.length) throw new Error("An account with this email already exists.");
-    const created = await api.post("/users", { name, email, password, bio, role: "author", status: "active" });
+    if (existing.length)
+      throw new Error("An account with this email already exists.");
+    const created = await api.post("/users", {
+      name,
+      email,
+      password,
+      bio,
+      role: "author",
+      status: "active",
+    });
     return persist(created);
   };
 
@@ -48,5 +57,11 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  return <AuthContext.Provider value={{ user, login, register, logout, updateProfile }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider
+      value={{ user, login, register, logout, updateProfile }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }

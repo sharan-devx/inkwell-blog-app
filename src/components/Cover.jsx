@@ -13,7 +13,11 @@ export default function Cover({ blog, height = 150, children }) {
   const [bg, fg] = CATEGORY_STYLES[blog.category] || CATEGORY_STYLES.Technology;
   return (
     <div className="cover" style={{ height, background: bg }}>
-      <span className="cover-letter" style={{ color: fg, fontSize: height * 1.1 }} aria-hidden="true">
+      <span
+        className="cover-letter"
+        style={{ color: fg, fontSize: height * 1.1 }}
+        aria-hidden="true"
+      >
         {blog.title.charAt(0).toUpperCase()}
       </span>
       {children}

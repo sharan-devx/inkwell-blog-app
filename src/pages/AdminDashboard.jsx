@@ -27,7 +27,9 @@ export default function AdminDashboard() {
       setError("Could not load data. Is JSON Server running on port 3001?");
     }
   };
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+  }, []);
 
   const removeBlog = async (blog) => {
     if (!window.confirm(`Delete "${blog.title}" and its comments?`)) return;
@@ -36,12 +38,17 @@ export default function AdminDashboard() {
   };
 
   const toggleBlock = async (a) => {
-    await api.patch(`/users/${a.id}`, { status: a.status === "blocked" ? "active" : "blocked" });
+    await api.patch(`/users/${a.id}`, {
+      status: a.status === "blocked" ? "active" : "blocked",
+    });
     load();
   };
 
   const removeAuthor = async (a) => {
-    if (!window.confirm(`Delete ${a.name} and all of their blogs and comments?`)) return;
+    if (
+      !window.confirm(`Delete ${a.name} and all of their blogs and comments?`)
+    )
+      return;
     const theirs = blogs.filter((b) => b.authorId === a.id);
     for (const b of theirs) await deleteBlogCascade(b.id);
     await api.del(`/users/${a.id}`);
@@ -52,21 +59,42 @@ export default function AdminDashboard() {
     <main className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h1 className="h2 mb-0">Admin dashboard</h1>
-        <Link to="/editor/new" className="btn btn-success">New blog</Link>
+        <Link to="/editor/new" className="btn btn-success">
+          New blog
+        </Link>
       </div>
       <div className="row g-3 mb-4">
-        <div className="col-4 col-md-3"><Stat label="Blogs" value={blogs.length} /></div>
-        <div className="col-4 col-md-3"><Stat label="Authors" value={authors.length} /></div>
-        <div className="col-4 col-md-3"><Stat label="Comments" value={Object.values(counts).reduce((a, b) => a + b, 0)} /></div>
+        <div className="col-4 col-md-3">
+          <Stat label="Blogs" value={blogs.length} />
+        </div>
+        <div className="col-4 col-md-3">
+          <Stat label="Authors" value={authors.length} />
+        </div>
+        <div className="col-4 col-md-3">
+          <Stat
+            label="Comments"
+            value={Object.values(counts).reduce((a, b) => a + b, 0)}
+          />
+        </div>
       </div>
       {error && <div className="alert alert-danger">{error}</div>}
 
       <ul className="nav nav-tabs mb-4">
         <li className="nav-item">
-          <button className={"nav-link" + (tab === "blogs" ? " active" : "")} onClick={() => setTab("blogs")}>All blogs</button>
+          <button
+            className={"nav-link" + (tab === "blogs" ? " active" : "")}
+            onClick={() => setTab("blogs")}
+          >
+            All blogs
+          </button>
         </li>
         <li className="nav-item">
-          <button className={"nav-link" + (tab === "authors" ? " active" : "")} onClick={() => setTab("authors")}>Authors</button>
+          <button
+            className={"nav-link" + (tab === "authors" ? " active" : "")}
+            onClick={() => setTab("authors")}
+          >
+            Authors
+          </button>
         </li>
       </ul>
 
@@ -78,8 +106,18 @@ export default function AdminDashboard() {
           showAuthorFilter
           renderActions={(b) => (
             <>
-              <Link to={`/editor/${b.id}`} className="btn btn-sm btn-outline-primary">Edit</Link>
-              <button className="btn btn-sm btn-outline-danger" onClick={() => removeBlog(b)}>Delete</button>
+              <Link
+                to={`/editor/${b.id}`}
+                className="btn btn-sm btn-outline-primary"
+              >
+                Edit
+              </Link>
+              <button
+                className="btn btn-sm btn-outline-danger"
+                onClick={() => removeBlog(b)}
+              >
+                Delete
+              </button>
             </>
           )}
         />
@@ -89,7 +127,13 @@ export default function AdminDashboard() {
         <div className="table-wrap table-responsive">
           <table className="table table-hover align-middle">
             <thead>
-              <tr><th>Name</th><th>Email</th><th>Blogs</th><th>Status</th><th className="text-end">Actions</th></tr>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Blogs</th>
+                <th>Status</th>
+                <th className="text-end">Actions</th>
+              </tr>
             </thead>
             <tbody>
               {authors.map((a) => (
@@ -98,17 +142,40 @@ export default function AdminDashboard() {
                   <td>{a.email}</td>
                   <td>{blogs.filter((b) => b.authorId === a.id).length}</td>
                   <td>
-                    <span className={"badge " + (a.status === "blocked" ? "text-bg-danger" : "text-bg-success")}>{a.status}</span>
+                    <span
+                      className={
+                        "badge " +
+                        (a.status === "blocked"
+                          ? "text-bg-danger"
+                          : "text-bg-success")
+                      }
+                    >
+                      {a.status}
+                    </span>
                   </td>
                   <td className="text-end">
-                    <button className="btn btn-sm btn-outline-secondary me-2" onClick={() => toggleBlock(a)}>
+                    <button
+                      className="btn btn-sm btn-outline-secondary me-2"
+                      onClick={() => toggleBlock(a)}
+                    >
                       {a.status === "blocked" ? "Unblock" : "Block"}
                     </button>
-                    <button className="btn btn-sm btn-outline-danger" onClick={() => removeAuthor(a)}>Delete</button>
+                    <button
+                      className="btn btn-sm btn-outline-danger"
+                      onClick={() => removeAuthor(a)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
-              {authors.length === 0 && <tr><td colSpan="5" className="text-center text-body-secondary">No authors registered yet.</td></tr>}
+              {authors.length === 0 && (
+                <tr>
+                  <td colSpan="5" className="text-center text-body-secondary">
+                    No authors registered yet.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

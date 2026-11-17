@@ -1,6 +1,13 @@
-const BASE = "http://localhost:3001";
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
-export const CATEGORIES = ["Technology", "Travel", "Food", "Lifestyle", "Education", "Health"];
+export const CATEGORIES = [
+  "Technology",
+  "Travel",
+  "Food",
+  "Lifestyle",
+  "Education",
+  "Health",
+];
 
 async function request(path, options = {}) {
   const res = await fetch(BASE + path, {
@@ -13,22 +20,26 @@ async function request(path, options = {}) {
 
 export const api = {
   get: (path) => request(path),
-  post: (path, body) => request(path, { method: "POST", body: JSON.stringify(body) }),
-  patch: (path, body) => request(path, { method: "PATCH", body: JSON.stringify(body) }),
+  post: (path, body) =>
+    request(path, { method: "POST", body: JSON.stringify(body) }),
+  patch: (path, body) =>
+    request(path, { method: "PATCH", body: JSON.stringify(body) }),
   del: (path) => request(path, { method: "DELETE" }),
 };
 
 export const fmtDate = (d) =>
-  new Date(d).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  new Date(d).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
-// Delete a blog together with its comments
 export async function deleteBlogCascade(blogId) {
   const comments = await api.get(`/comments?blogId=${blogId}`);
   await Promise.all(comments.map((c) => api.del(`/comments/${c.id}`)));
   await api.del(`/blogs/${blogId}`);
 }
 
-// [cover colour, letter colour] for each category
 export const CATEGORY_STYLES = {
   Technology: ["#3b4cca", "#8f9bff"],
   Travel: ["#0f7f86", "#6fd6c4"],
@@ -39,9 +50,14 @@ export const CATEGORY_STYLES = {
 };
 
 export const initials = (name = "") =>
-  name.split(" ").filter(Boolean).map((w) => w[0]).join("").slice(0, 2).toUpperCase() || "?";
+  name
+    .split(" ")
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase() || "?";
 
-// Upload an image file to public/uploads/<type>/ (type: "profiles" or "blogs"). Returns its URL path.
 export async function uploadImage(file, type) {
   let res;
   try {
@@ -51,12 +67,20 @@ export async function uploadImage(file, type) {
       body: file,
     });
   } catch {
-    throw new Error("Could not reach the server. Start the app with npm start.");
+    throw new Error(
+      "Could not reach the server. Start the app with npm start.",
+    );
   }
   if (!res.ok) {
-    let msg = "Upload failed. Restart the app with npm start so uploads are enabled.";
-    try { msg = (await res.json()).error || msg; } catch { /* keep default */ }
+    let msg =
+      "Upload failed. Restart the app with npm start so uploads are enabled.";
+    try {
+      msg = (await res.json()).error || msg;
+    } catch {
+      /* keep default */
+    }
     throw new Error(msg);
   }
-  return (await res.json()).url;
+  const data = await res.json();
+  return BASE + data.url;
 }
