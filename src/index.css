@@ -450,3 +450,11 @@ h5,
   color: var(--muted);
   font-size: 0.85rem;
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
