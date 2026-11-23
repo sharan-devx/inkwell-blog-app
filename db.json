@@ -98,7 +98,7 @@
       "id": 3,
       "title": "REST vs GraphQL: Picking the Right API Style",
       "category": "Technology",
-      "imageUrl": "http://localhost:3001/images/blogs/1794908333038-4ndz38.png",
+      "imageUrl": "/images/blogs/1794908333038-4ndz38.png",
       "content": "REST is simple, cacheable and understood by every tool. GraphQL lets clients ask for exactly the fields they need, which helps when screens combine data from many places.\n\nFor a small project with a few resources, start with REST. Reach for GraphQL when mobile and web clients keep needing different shapes of the same data.",
       "authorId": 2,
       "createdAt": "2025-02-08T09:00:00.000Z",
