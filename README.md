@@ -33,3 +33,9 @@ Passwords are stored in plain text and checked on the client. This is fine for a
 - **Profile page** (`/profile`, click your avatar in the navbar): change name, email, bio, profile picture and password.
 - **Uploads:** pictures chosen in the app are saved by `upload-middleware.cjs` (loaded by `npm run server`) into `public/uploads/profiles/` and `public/uploads/blogs/`. Put your own images in `public/images/`. See `public/README.md`.
 - **Search:** type in the navbar box and press Enter to search titles, content, categories and author names.
+
+## Security notes
+This is a portfolio demo using JSON Server as a mock API. It intentionally has no
+real authentication: passwords are stored as plain text and the API is open.
+Do not enter real personal data. A production version would use a backend with
+hashed passwords (bcrypt), HTTP-only cookie sessions (JWT), and server-side role checks.
